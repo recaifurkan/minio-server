@@ -1,0 +1,22 @@
+#     helm install myminio \
+#   --set accessKey.password=minio-access-key \
+#   --set secretKey.password=minio-secret-key \
+#   --set mode=distributed \
+#   --set statefulset.replicaCount=8 \
+#     bitnami/minio
+
+
+
+#     kubectl run -it --namespace default myminio-client \
+#      --rm --tty -i --restart='Never' \
+#      --env MINIO_SERVER_ACCESS_KEY=minio-access-key \
+#      --env MINIO_SERVER_SECRET_KEY=minio-secret-key \
+#      --env MINIO_SERVER_HOST=myminio \
+#      --image docker.io/bitnami/minio-client:2020.9.3-debian-10-r7 -- admin info server minio
+
+
+
+#      helm install myminio --set mode=distributed,replicas=8,zones=2 \
+#      --set accessKey=minio-access-key \
+#      --set secretKey=minio-secret-key \
+#      minio/minio
